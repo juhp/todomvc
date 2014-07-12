@@ -19,6 +19,8 @@
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="site-assets/main.css">
 		<!-- endbuild -->
+		<script src="bower_components/platform/platform.js"></script>
+		<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
 	</head>
 	<body>
 		<div class="container">
@@ -47,7 +49,28 @@
 					<div class="g-plusone" data-size="medium" data-annotation="none" data-href="http://todomvc.com"></div>
 				</div>
 				<div class="col-md-8">
-					<h2>JavaScript Apps</h2>
+					<style shim-shadowdom>
+						paper-tabs, core-toolbar {
+							color: rgb(53, 53, 53);
+							background-color: #f4f4f4;
+							font-family: 'Helvetica Neue', Helvetica, Arial;
+							box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+						}
+
+						paper-tabs::shadow #selectionBar {
+							background-color: #b12d2b;
+						}
+
+						paper-tab::shadow paper-ripple#ink {
+							color: #b12d2b;
+						}
+					</style>
+					<paper-tabs selected="0">
+						<paper-tab>JavaScript Apps</paper-tab>
+						<paper-tab>Compile-to-JS</paper-tab>
+						<paper-tab>Vanilla JS</paper-tab>
+					</paper-tabs>
+
 					<ul class="applist js">
 						<li class="routing">
 							<a href="architecture-examples/backbone/" data-source="http://documentcloud.github.com/backbone/" data-content="Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.">Backbone.js</a>
